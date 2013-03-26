@@ -1,14 +1,36 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>MySite</title>
+  <title>Welcome</title>
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
 <body>
 
-<%= yield %>
+  <div class="home"></div>
+  <div class="nav">
+    <div class="menu">
+      <a href="javascript:void(0)" class="nav-index" id="nav"><h2>Experience</h2></a>
+      <ul class="index-menu" id="dropdown">
+        <li><h3><%= link_to "jQuery Slider", jquery_slider_path%></h3><li>
+        <li><a href="#"><h3>In-field Labels</h3></a><li>
+        <li><a href="#"><h3>Interactive Resume</h3></a></li>
+        <li><a href="#"><h3>Website Project</h3></a></li>
+      </ul>
+    </div>
+    <div class="menu" id="contact">
+      <a href="javascript:void(0)" class="nav-contact" id="nav"><h2>Contact</h2></a>
+      <ul class="contact-menu" id="dropdown">
+        <li><a href="#"><h3>Send An Email</h3></a></li>
+        <li><a href="#"><h3>Other Contact Info</h3></a></li>
+      </ul>
+    </div>
+  </div>
+ 
+  <div class="clear">
+    <%= yield %>
+  </div>
 
 </body>
 </html>

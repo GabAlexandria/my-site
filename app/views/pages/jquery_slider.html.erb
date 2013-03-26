@@ -1,0 +1,66 @@
+<section>
+
+  <div class="enter-area" id="areaLeft">
+    <div class="left-arrow" id="arrow">
+      <a href="javascript:void(0)" class="left">
+        <div class="arrow-button">
+          <div class="arrow-left" id="css-arrow"></div>
+        </div>
+      </a>
+    </div>
+  </div>
+  <div class="slider">
+    <ul class="slides">
+
+      <li>
+        <%= image_tag("kitty1.jpg", :class => "slide") %>
+        <div class="overlay"></div>
+        <p class="overlay-text">
+        </p>
+      </li>
+
+      <li>
+        <%= image_tag("kitty2.jpg", :class => "slide") %>
+        <div class="overlay"></div>
+        <p class="overlay-text">
+        </p>
+      </li>
+
+      <li>
+        <%= image_tag("puppy1.png", :class => "slide") %>
+        <div class="overlay"></div>
+        <p class="overlay-text">
+        </p>
+      </li>
+
+      <li>
+        <%= image_tag("puppy2.png", :class => "slide") %>
+        <div class="overlay"></div>
+        <p class="overlay-text">
+        </p>
+      </li>
+    </ul>
+  </div>
+
+  <div class="enter-area" id="areaRight">
+    <div class="right-arrow" id="arrow">
+      <a href="javascript:void(0)" class="right">
+        <div class="arrow-button">
+          <div class="arrow-right" id="css-arrow"></div>
+        </div>
+      </a>
+    </div>
+  </div>
+
+  <ul class="goToNum">
+    <%= (0..3).each do |num| %>
+    <%= link_to("#{num + 1}", "javascript:void(0)", :id => "#{num}") %>
+    <% end %>
+  </ul>
+  
+  <div class="buttons">
+    <button type="button" class="start">Start Slides</button>
+    <button type="button" class="pause">Pause Slides</button>
+  </div>
+
+</section>

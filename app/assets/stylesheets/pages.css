@@ -1,0 +1,96 @@
+section {
+  padding-top: 20px;
+}
+
+.slider {
+  position: relative;
+  width: 300px;
+  height: 300px;
+  overflow: hidden;
+  float: left;
+}
+
+ul.slides {
+  position: absolute;
+}
+
+.slides li {
+  position: absolute;
+  float: left;
+  width: 300px;
+  top: -16px;
+}
+
+img.slide {
+  width: 300px;
+  height: 300px;
+}
+
+div.enter-area, div#arrow {
+  position: absolute;
+  height: 300px;
+  width: 60px;
+}
+
+div.enter-area {
+  top: 153px;
+  z-index: 1000;
+}
+
+div#arrow {
+  background-color: black;
+  opacity: 0.6;
+  z-index: 1001;
+}
+
+div#areaRight {
+  left: 248px;
+}
+
+.arrow-button {
+  width: 50px;
+  height: 50px;
+  margin-top: 130px;
+  background-color: gray;
+  border-radius: 100%;
+  margin-left: 6px;
+}
+
+#css-arrow {
+  width: 0;
+  height: 0;
+  border-top: 15px solid transparent;
+  border-bottom: 15px solid transparent;
+  position: absolute;
+  margin-top: 10px;
+}
+
+.arrow-left {
+  border-right: 15px solid black;
+  margin-left: 15px;
+}
+
+.arrow-right {
+  border-left: 15px solid black;
+  margin-left: 20px;
+}
+
+ul.goToNum {
+  clear: both;
+  padding: 20px 0 0 0;
+}
+
+.goToNum a {
+  margin-left: 10px;
+  padding: 5px 10px;
+  border: 1px solid black;
+}
+
+div.buttons {
+  clear: both;
+}
+
+button {
+  cursor: pointer;
+  height: 30px;
+}

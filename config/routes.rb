@@ -1,6 +1,8 @@
 MySite::Application.routes.draw do
 
   root :to => "pages#welcome"
+
+  get "/jquery-slider-demo" => "pages#jquery_slider", :as => "jquery_slider"      	
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
