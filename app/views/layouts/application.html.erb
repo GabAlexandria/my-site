@@ -7,16 +7,16 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-
+  <%= show_flash %>
   <div class="home"></div>
   <div class="nav">
     <div class="menu">
       <a href="javascript:void(0)" class="nav-index" id="nav"><h2>Experience</h2></a>
       <ul class="index-menu" id="dropdown">
-        <li><h3><%= link_to "jQuery Slider", jquery_slider_path%></h3><li>
-        <li><a href="#"><h3>In-field Labels</h3></a><li>
-        <li><a href="#"><h3>Interactive Resume</h3></a></li>
-        <li><a href="#"><h3>Website Project</h3></a></li>
+        <li><h3><%= link_to "jQuery Slider", jquery_slider_path%></h3></li>
+        <li><h3><%= link_to "In-field Labels", infield_labels_path %></h3></li>
+        <li><h3><%= link_to "Interactive Resume", resume_path %></h3></li>
+        <li><h3><%= link_to "Website Project", website_project_path %></h3></li>
       </ul>
     </div>
     <div class="menu" id="contact">
@@ -26,6 +26,15 @@
         <li><a href="#"><h3>Other Contact Info</h3></a></li>
       </ul>
     </div>
+    <% if current_admin %>
+    <div class="menu" id="admin">
+      <a href="javascript:void(0)" class="nav-admin" id="nav"><h2>Admin</h2></a>
+      <ul class="admin-menu" id="dropdown">
+        <li><h3><%= link_to "Photo Slides", slide_photos_path %></h3></li> 
+        <li><h3><%= link_to "Sign Out", "/admins/logout", :method => :delete %> </h3></li>
+      </ul>
+    </div>
+    <% end %>
   </div>
  
   <div class="clear">

@@ -1,8 +1,17 @@
 MySite::Application.routes.draw do
 
+  devise_for :admins, :path_names => {:sign_in => 'login', :sign_out => 'logout'}
+
+  resources :slide_photos
+
+
   root :to => "pages#welcome"
 
-  get "/jquery-slider-demo" => "pages#jquery_slider", :as => "jquery_slider"      	
+  get "/jquery-slider-demo" => "pages#jquery_slider", :as => "jquery_slider"
+  get "/infield-labels-demo" => "pages#infield_labels", :as => "infield_labels"
+  get "/resume" => "pages#resume", :as => "resume"
+  get "/website-project" => "pages#website_project", :as => "website_project"
+  	
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

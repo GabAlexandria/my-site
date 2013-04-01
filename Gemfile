@@ -1,11 +1,16 @@
 source 'https://rubygems.org'
 
 gem 'rails', '3.2.11'
+gem 'pry-rails'
+gem 'paperclip', :git => "git://github.com/thoughtbot/paperclip.git"
+gem 'sanitize'
+gem 'devise'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-gem 'sqlite3'
+gem 'pg'
+gem 'thin'
 
 
 # Gems used only for assets and not required
@@ -18,6 +23,11 @@ group :assets do
   # gem 'therubyracer', :platforms => :ruby
 
   gem 'uglifier', '>= 1.0.3'
+end
+
+group :test, :development do
+  gem "rspec-rails", "~>2.0"
+  gem "mailcatcher"
 end
 
 gem 'jquery-rails'

@@ -1,0 +1,36 @@
+<section>
+
+  <%= link_to "Create Photo Slide", new_slide_photo_path %>
+
+  <% if @slide_photos.empty? %>
+    <p> There are no photos to show </p>
+  <% else %>
+    <table>
+      <thead>
+       <tr>
+         <th>Picture</th>
+         <th>Name</th>
+         <th>Slug</th>
+         <th>Description</th>
+         <th>Created At</th>
+         <th>Updated At</th>
+         <th></th>
+       </tr>
+      <thead>
+      <tbody>
+        <% @slide_photos.each do |photo| %>
+          <tr>
+           <td><%= image_tag photo.avatar.url(:medium) %></td>
+           <td><%= photo.name %></td>
+           <td><%= photo.slug %></td>
+           <td><%= photo.description %></td>
+           <td><%= photo.created_at %></td>
+           <td><%= photo.updated_at %></td>
+           <td><%= link_to "Update", edit_slide_photo_path(photo) %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  <% end %>
+
+</section>

@@ -1,5 +1,6 @@
 section {
   padding-top: 20px;
+  padding-left: 150px;
 }
 
 .slider {
@@ -26,34 +27,64 @@ img.slide {
   height: 300px;
 }
 
-div.enter-area, div#arrow {
+.overlay, .overlay-text {
+  bottom: 66px;
+  height: 60px;
+}
+
+.overlay {
+  position: relative;
+  background: black;
+  opacity: 0.6;
+}
+
+.overlay-text {
   position: absolute;
-  height: 300px;
+  text-align: center;
+  margin: 0;
+  color: white;
+}
+
+div.enter-area, div#arrow {
   width: 60px;
 }
 
 div.enter-area {
   top: 153px;
   z-index: 1000;
+  position: absolute;
+  height: 300px;
 }
 
 div#arrow {
   background-color: black;
   opacity: 0.6;
   z-index: 1001;
+  position: relative;
+  margin-top: 120px;
+  height: 60px;
+}
+
+div.left-arrow {
+  border-radius: 0 100% 100% 0;
+}
+
+div.right-arrow {
+  border-radius: 100% 0 0 100%;
 }
 
 div#areaRight {
-  left: 248px;
+  left: 398px;
 }
 
 .arrow-button {
   width: 50px;
   height: 50px;
-  margin-top: 130px;
+  position: absolute;
   background-color: gray;
   border-radius: 100%;
   margin-left: 6px;
+  top: 4px
 }
 
 #css-arrow {
@@ -93,4 +124,52 @@ div.buttons {
 button {
   cursor: pointer;
   height: 30px;
+}
+
+input {
+  height: 30px;
+  width: 200px;
+  display: block;
+  padding-left: 10px;
+}
+
+div.form-field {
+  position:relative;
+  margin-bottom: 20px;
+}
+
+label {
+  position: absolute;
+  display: block;
+  top: 6px;
+  left: 10px;
+  font-size: 20px;
+  color: #777;
+  cursor: text;
+}
+
+form, .multi-dropdown {
+  float: left;
+}
+
+.multi-dropdown {
+  margin-left: 50px;
+
+}
+
+#bar {
+  width: 300px;
+  height: 30px;
+  background: gray;
+  position: relative;
+  border: 1px black solid;
+}
+
+#code-field {
+  width: 300px;
+  height: 200px;
+  border: 1px solid black;
+  position: absolute;
+  display: none;
+  top: 30px;
 }

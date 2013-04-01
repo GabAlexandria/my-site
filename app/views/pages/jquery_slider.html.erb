@@ -15,8 +15,7 @@
       <li>
         <%= image_tag("kitty1.jpg", :class => "slide") %>
         <div class="overlay"></div>
-        <p class="overlay-text">
-        </p>
+        <p class="overlay-text">Hello there young'un</p>
       </li>
 
       <li>
@@ -53,7 +52,7 @@
   </div>
 
   <ul class="goToNum">
-    <%= (0..3).each do |num| %>
+    <% (0..3).each do |num| %>
     <%= link_to("#{num + 1}", "javascript:void(0)", :id => "#{num}") %>
     <% end %>
   </ul>

@@ -1,6 +1,29 @@
 body {
   font-family: Trebuchet, sans-serif;
-  color: #fff;
+}
+
+div.flash {
+  position: relative;
+  text-align: center;
+  height: 35px;
+  margin-bottom: 20px;
+  padding-top: 15px;
+  font-size: 18px;
+}
+
+.flash_notice {
+  background: #ccffcc;
+  border: 1px solid #68cd68;
+}
+
+.flash_error {
+  background: #ffcccc;
+  border: 2px solid #cc0000;
+}
+
+.flash_warning {
+  background: #ffe;
+  border: 1px solid #ff0;
 }
 
 .home {
@@ -29,13 +52,12 @@ h3 {
   text-decoration: none;
   display: inline-block;
   padding: 0 10px;
-  margin: 15px 0 0 0;
 }
 
 .menu {
   display: inline-block;
   position: relative;
-  z-index: 1;
+  z-index: 1002;
   height: 100%;
   width: 184px;
   text-align: center;
@@ -53,10 +75,14 @@ div#contact {
   left: -4px;
 }
 
+div#admin {
+  left: -8px;
+}
+
 .menu ul {
   padding: 0;
   border: 5px solid black;
-  top: 34px;
+  top: 30px;
 }
 
 ul {

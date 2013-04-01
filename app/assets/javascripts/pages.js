@@ -32,24 +32,30 @@ $(document).ready(function() {
   }
 
   //variable to store setInterval
-  var slideAnimation;
+  var slidesAnimated;
+
 
   //function to start slideshow
   function startSlides() {
-    slideAnimation = setInterval(function() {
-      (index === limit) ? slider("+=" + fullTurn, upperSpeed): slider("-=" + slideDist, lowerSpeed);
-    index = (index === limit) ? 0 : index + 1;
-    }, interval);
+    if (!slidesAnimated) {
+      slidesAnimated = setInterval(function() {
+        (index === limit) ? slider("+=" + fullTurn, upperSpeed): slider("-=" + slideDist, lowerSpeed);
+        index = (index === limit) ? 0 : index + 1;
+      }, interval);
+    }
   }
 
   //function to pause slideshow
   function pauseSlides() {
-    clearInterval(slideAnimation);
+    clearInterval(slidesAnimated);
+    slidesAnimated = null;  //to allow startSlides to be called again
   }
 
-  //startSlides();
+  if (!slidesAnimated) {
+    startSlides();
+  }
 
-  //
+  //left arrow button to move to the photo on the left
   $("a.left").click(function() {
     if (!$(kids[index]).is(":animated")) {
       (index === 0) ? slider("-=" + fullTurn, upperSpeed) : slider("+=" + slideDist, lowerSpeed);
@@ -58,6 +64,7 @@ $(document).ready(function() {
     }
   });
 
+  //right arrow button to move to the photo on the right
   $("a.right").click(function() {
     if (!$(kids[index]).is(":animated")) {
       (index === limit) ? slider("+=" + fullTurn, upperSpeed) : slider("-=" + slideDist, lowerSpeed);
@@ -98,4 +105,42 @@ $(document).ready(function() {
       $($(this).find('div')).hide();
     }
   );
+});
+
+//infield label javascript
+
+$(document).ready(function() {
+  $(".form-field").focusin(function () {
+    $label = $($(this).find('label'));
+    $input = $($(this).find(':input'));
+    //Detect if filled by autocomplete
+    setTimeout(function() {
+      if ($input.is(":visible") && $input.val() !== "") {
+        $label.hide();
+      }
+    }, 2500);
+    //prevent label from showing up on input select
+    if ($input.val() !== "") {
+      $input.select(function() {
+        $label.hide();
+      });
+    } else {
+      $label.fadeTo(100, 0.5);
+      $input.keydown(function() {
+        $label.hide();
+        $input.unbind('keydown');
+      });
+    }
+  });
+
+  $(".form-field").focusout(function() {
+    $input = $($(this).find(':input'))
+    if ($input.val() === "") {
+      $($(this).find('label')).fadeTo(100, 1);
+    }
+  });
+});
+
+$(document).ready(function() {
+   
 });
