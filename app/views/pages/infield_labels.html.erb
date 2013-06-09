@@ -1,5 +1,7 @@
 <section>
 
+  <div><div></div></div>
+
   <form>
     <div class="form-field">
       <label for="name">Name</label>
@@ -28,23 +30,22 @@
   </form>
 
   <div class="multi-dropdown">
-    <a href="javascript:void(0)" id="bar-link">
-      <div class="first-bar" id="bar">
-        <p>First one</p>
-        <div class="field-one" id="code-field"></div>
+    <div class="closed" id="bar">
+      <div class="bar-link"><h3>View HTML For Infield Label</h3></div>
+      <%= link_to(new_feature_code_path, :remote => true) do %>
+        <%=  image_tag("edit-icon.png") %>
+      <% end %>
+      <div id="code-field">
+
       </div>
-    </a>
-    <a href="javascript:void(0)" id="bar-link">
-      <div  class="second-bar" id="bar">
-        <p>Second one</p>
-        <div class="field-two" id="code-field"></div>
-      </div>
-    </a>
-    <a href="javascript:void(0)" id="bar-link">
-      <div class="third-bar" id="bar">
-        <p>Third one</p>
-        <div class="field-three" id="code-field"></div>
-      </div>
-    </a>
+    </div>
+    <div  class="closed" id="bar">
+     <div class="bar-link"><h3>View CSS For Infield Label</h3></div>
+     <div id="code-field"></div>
+    </div>
+    <div class="closed" id="bar">
+      <div class="bar-link"><h3>View Javascript for Infield Label</h3></div>
+      <div id="code-field"></div>
+    </div>
   </div>
 </section>

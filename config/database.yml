@@ -9,6 +9,7 @@ development:
   pool: 5
   timeout: 5000
   username: gabz
+  password: ria1991
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
@@ -19,6 +20,7 @@ test:
   pool: 5
   timeout: 5000
   username: gabz
+  password: ria1991
 
 
 production:

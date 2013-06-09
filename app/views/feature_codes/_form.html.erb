@@ -1,0 +1,10 @@
+<label for="code-title" class="admin-form">Title</label>
+<%= form.text_field :title, :id => "code-title" %>
+
+<%= form.cktext_area :code, :value => "Enter code here...." %>
+
+<div class="select-area">
+  <%= select_tag :feature_id, options_from_collection_for_select(@features, "id", "name", @feature_code.feature_id) %>
+
+  <%= select_tag :code_type_id, options_from_collection_for_select(@types, "id", "name", @feature_code.code_type_id) %>
+</div>

@@ -1,3 +1,5 @@
+/* sliders */
+
 section {
   padding-top: 20px;
   padding-left: 150px;
@@ -5,8 +7,8 @@ section {
 
 .slider {
   position: relative;
-  width: 300px;
-  height: 300px;
+  width: 700px;
+  height: 400px;
   overflow: hidden;
   float: left;
 }
@@ -18,17 +20,19 @@ ul.slides {
 .slides li {
   position: absolute;
   float: left;
-  width: 300px;
+  width: 700px;
   top: -16px;
+  background:#383838;
 }
 
 img.slide {
-  width: 300px;
-  height: 300px;
+  display:block;
+  margin-left:auto;
+  margin-right:auto;
 }
 
 .overlay, .overlay-text {
-  bottom: 66px;
+  bottom: 60px;
   height: 60px;
 }
 
@@ -39,8 +43,8 @@ img.slide {
 }
 
 .overlay-text {
-  position: absolute;
-  text-align: center;
+  padding-top:1em;
+  padding-left:0.8em;
   margin: 0;
   color: white;
 }
@@ -53,7 +57,7 @@ div.enter-area {
   top: 153px;
   z-index: 1000;
   position: absolute;
-  height: 300px;
+  height: 400px;
 }
 
 div#arrow {
@@ -61,7 +65,7 @@ div#arrow {
   opacity: 0.6;
   z-index: 1001;
   position: relative;
-  margin-top: 120px;
+  margin-top: 170px;
   height: 60px;
 }
 
@@ -74,7 +78,7 @@ div.right-arrow {
 }
 
 div#areaRight {
-  left: 398px;
+  left: 798px;
 }
 
 .arrow-button {
@@ -126,6 +130,8 @@ button {
   height: 30px;
 }
 
+/* infield-labels*/
+
 input {
   height: 30px;
   width: 200px;
@@ -138,7 +144,7 @@ div.form-field {
   margin-bottom: 20px;
 }
 
-label {
+.form-field label {
   position: absolute;
   display: block;
   top: 6px;
@@ -148,6 +154,8 @@ label {
   cursor: text;
 }
 
+
+/*accordion */
 form, .multi-dropdown {
   float: left;
 }
@@ -157,19 +165,45 @@ form, .multi-dropdown {
 
 }
 
-#bar {
-  width: 300px;
-  height: 30px;
-  background: gray;
+a.edit-code {
+  position:absolute;
+  margin-top:-30px;
+  margin-left:450px;
+}
+
+a.edit-code:hover {
+  opacity:0.5;
+}
+
+.bar-link {
+  width: 620px;
+  height: 40px;
+  background-image:url('title-bar.jpg');
   position: relative;
-  border: 1px black solid;
+  cursor:pointer;
+  margin-bottom:1px;
+}
+
+.bar-link h3 {
+  margin:0;
+  text-align:center;
+  padding-top:10px;
+  color:#c0c0c0;
 }
 
 #code-field {
-  width: 300px;
-  height: 200px;
-  border: 1px solid black;
+  width: 618px;
+  height: 397px;
+  border-right: 1px solid #383838;
+  border-bottom:1px solid #383838;
+  border-left:1px solid #383838;
   position: absolute;
   display: none;
-  top: 30px;
+  overflow-y:scroll;
+  overflow-x:hidden;
+}
+
+#code-field p{
+  margin:0;
+  margin-bottom:5px;
 }

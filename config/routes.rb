@@ -3,6 +3,9 @@ MySite::Application.routes.draw do
   devise_for :admins, :path_names => {:sign_in => 'login', :sign_out => 'logout'}
 
   resources :slide_photos
+  resources :features
+  resources :feature_codes
+  resources :code_types
 
 
   root :to => "pages#welcome"
